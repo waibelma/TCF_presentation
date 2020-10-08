@@ -11,7 +11,8 @@
 \usepackage{eurosym}
 \usepackage{hyperref}
 \usepackage{amsmath}
-\usepackage{graphicx}
+\usepackage{graphicx, wrapfig}
+
 
 \usepackage{tikz}
 %\graphicspath{{../../2_Data/output}} % Sets the (relative) path of the figure directory
@@ -184,6 +185,191 @@ Banerjee et al. (2020), Bartik et al. (2020), Balduzzi et al. (2020), Dursun-de 
 
 \section{Model}
 \subsection{Model setup}
+
+\begin{frame}
+\frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006)}
+\begin{itemize}[label={\MyBall}]
+\item competitive credit market; effort of entrepreneur is not contractible $\implies$ \textbf{incentive compatibility};  \textbf{participation constraint}
+\item liquidity shock $\rho$ randomly drawn from commonly known cdf $F(\rho)$
+\item The contract at $t=0$ also states the maximum liquidity shock $\rho ^*$ at $t=1$ that the investor agrees to finance.
+\item Pledgeable in come to bank in a competitive credit market is thus \begin{align*}
+    \mathcal{P}(\rho ^*)=F(\rho ^*)p_H\left( R-\frac{B}{\Delta p}\right)-\int ^{\rho ^*}_0 \rho f(\rho)d\rho=I-A
+\end{align*}
+\item The expected payoff to the firm is \begin{equation*}
+    NPV_{firm}(\rho ^*)=U_{firm}(\rho ^*)=F(\rho ^*)p_HR-\left( I+\int ^{\rho ^*}_0 \rho f(\rho)d\rho \right)
+\end{equation*}
+\item \begin{equation*}
+ \rho ^* \in [p_H(R-\frac{B}{\Delta p}),  p_HR]\implies \text{Secure a line of credit of } \rho^*
+\end{equation*}
+
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Government Intervention and New Moral Hazard}
+\begin{itemize}[label={\MyBall}]
+\item An aggregate liquidity shock $\rho>\rho^*$ hits all firms: government with deep pocket intervenes at $t=1$.
+\item The government can only monitor the firm through the investor.
+\item The firm at $t=1$, if not monitored, chooses between:
+\begin{itemize}[label={\MyBall}]
+\item \textbf{reinvest:} invest government liquidity together with the credit line contracted with the investor;
+\item \textbf{default:} consume the government injection.
+
+\end{itemize}
+
+
+\begin{table}[H]
+\centering
+\caption{Cashflows Upon Federal Liquidity Injection}
+\resizebox{2in}{!}{\begin{tabular}{lcccc}
+\hline
+Decision &  Agent            & $t=0$      & $t=1$     & $t=2$  \\ \hline
+\multirow{2}{*}{reinvest} & Firm & $-A$     &   0    & $p_H\frac{B}{\Delta p}$ \\
+& Bank     & $-(I-A)$ & $-\rho$ * & $p_H\left( R-\frac{B}{\Delta p}\right)$ \\ \hline
+\hline
+%t            & $0$      & $1$     & $2$  \\ \hline
+\multirow{2}{*}{default}& Firm & $-A$     & $+(\rho-\rho ^*)$       & 0 \\
+& Bank     & $-(I-A)$ & 0  & 0 \\ \hline
+\end{tabular}}
+\end{table}
+
+\item $ \rho ^* \in [p_H(R-\frac{B}{\Delta p}),  p_HR] \implies$ \textbf{investor does not have incentive to monitor regardless of $\rho$}, he would rather the project go south.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fiscal Cost of Intervention}
+When $\rho \leq \rho ^*+\frac{p_HB}{\Delta p}$, the firm reinvests; otherwise the firm defaults.
+
+\begin{wrapfigure}{r}{8cm}
+\includegraphics[scale=0.34]{utility1}
+\end{wrapfigure} 
+
+The government has to incentivize the investor to overcome the problem by paying him $D$ to monitor the firm, a discontinuity increase in fiscal cost:
+\begin{align*}
+D=\rho ^*-p_H(R-\frac{B}{\Delta p})  
+\end{align*}
+\par
+\textbf{Policy Recommendation I:} \textit{The government decides to inject liquidity in response to a liquidity shock of size $\rho$ whenever $\phi-g(\rho)>0 \iff \rho<g^{-1}(\phi)$ assuming that the government is able to observe the liquidity shock.}
+\end{frame}
+
+
+<<<<<<< Updated upstream
+\begin{frame}
+\frametitle{Fiscal Cost of Intervention}
+\includegraphics[scale=0.6]{utility1}
+\end{frame}
+
+\begin{frame}
+\frametitle{Externality}
+\begin{itemize}[label={\MyBall}]
+\item Bailing out firms is always financially costly to the government, so why would a government intervene?
+\item Each firm provides a positive externality $\frac{\phi}{N} > 0$, where $N$ is the total number of firms in the economy. In case of aggregate shock that threats the whole economy, the government evaluates $\phi$ against $g(\rho)$ 
+\vspace{1cm}
+\item \textbf{Policy Recommendation 1:} \textit{The government decides to inject liquidity in response to a liquidity shock of size $\rho$ whenever $\phi-g(\rho)>0 \iff \rho<g^{-1}(\phi)$ assuming that the government is able to observe the liquidity shock.}
+\end{itemize}
+\end{frame}
+=======
+
+\subsection{Over-Report Tendency}
+>>>>>>> Stashed changes
+
+\begin{frame}
+\frametitle{Over-Report Tendency}
+\begin{itemize}[label={\MyBall}]
+
+\item It is particularly likely that the true liquidity shock $\rho_t$ is private information to the firm and the investor.
+\item This informational asymmetry allows the firm-investor pair to over-report the actual liquidity shock as $\rho_{r} = \rho_{t}+\sigma$ for some $\sigma \geq 0$ so as to jointly realize extra payoff.
+\item The problem is aggravated around the cutoff $\rho_{cf}$. This is because  over-reporting for some $\rho_t$ slightly below $\rho_{cf}$ could lead to a discontinuous increase in fiscal costs.
+
+
+<<<<<<< Updated upstream
+\begin{frame}
+\frametitle{Over-Report Tendency}
+\includegraphics[scale=0.4]{utility2}
+\begin{itemize}[label={\MyBall}]
+
+\item The moral hazard between the government and the firm only exists in $A_2$ but not in $A_1$;
+\item A bank-firm pair with $\rho_t \in A_1$ has incentives to report a higher shock and pretend to be in $A_2$ in order to exploit $D$
+=======
+>>>>>>> Stashed changes
+\end{itemize}
+\begin{center}
+\includegraphics[scale=0.3]{utility2}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Over-Report Tendency}
+\begin{itemize}[label={\MyBall}]
+\item Our goal: to find policy cutoff $\tilde{\rho}$ that causes the least loss to the government compared to a perfect world without over-report tendency.
+
+\item Observing $\rho_r$, the government forms an estimate of $\sigma=\rho_r-\rho_t$, denoted as $\psi$, which is continuously distributed with cdf $H(\psi)$.
+\item If the government grants $\rho_r-\rho^*+D$, the expected loss (compared to perfect world) is $\int h(\psi)\psi \,\,d\psi+\mathbb{P}(\rho_r-\psi \leq \rho_{cf})D$, denoted as \textcolor{red}{\textit{type I loss}}; if the government only grants $\rho_r-\rho^*$, the expected loss is $\int h(\psi)\psi \,\,d\psi+\mathbb{P}(\rho_r-\psi > \rho_{cf})(\phi-D)$, denoted as \textcolor{red}{\textit{type II loss}}. 
+\item By definition of $\tilde{\rho}$, it solves when the two types loss equalize.
+
+\begin{align*}
+         \tilde{\rho}&=\rho_{cf}+H^{-1}\left( \frac{D}{\phi} \right).
+\end{align*}
+\item \textbf{Policy Recommendation 2:} \textit{In case of informational asymmetries of actual liquidity shock $\rho_t$ the fiscal authority should set $\tilde{\rho}=\rho_{cf}+H^{-1}\left( \frac{D}{\phi} \right)$.}
+\end{itemize}
+\end{frame}
+
+<<<<<<< Updated upstream
+\section{Analysis}
+\subsection{Fiscal Cost of Intervention}
+
+
+
+
+\begin{frame}
+\frametitle{Extension}
+
+\begin{itemize}[label={\MyBall}]
+
+	\item Idea: In the US banks are forced to keep a minimum of 5\% of the credit risk on their balance sheet. 
+
+	\item Show adjusted table on page 10 
+
+	\item In the current version of the model, whether or not the banks are exposed to part of the credit risk doesn't change their monitoring incentives because the IC and PC need to be fulfilled and the payoff structure cannot be altered. 
+
+	\item Question: How can we move to a more accurate description of reality by allowing for repayment of
+
+\end{itemize}
+\end{frame}
+
+=======
+>>>>>>> Stashed changes
+\section{Conclusion}
+\begin{frame}
+\frametitle{Conclusion}
+Model of government bailout of firms through financial intermediaries
+	\begin{itemize}[label={\MyBall}]
+		\item Aggregate liquidity shock exceeds firms' credit lines.\\
+		$\implies$ Requires externality-valuing government to make a decision about liquidity injections.
+		\pause
+		\item Federal liquidity injection via financial intermediaries creates a discontinuous increase in fiscal costs due to moral hazard.
+		\pause
+		\item Private information about the size of the liquidity shock  aggravates the moral hazard problem locally.
+		\pause
+		\item Government intervention is costly but not substitutable by the financial intermediaries.
+	\end{itemize}
+
+\end{frame}
+
+\section{Appendix}
+\begin{frame}
+\frametitle{XXX}
+\end{frame}
+
+
+\section{Appendix}
+
+\subsection{Model setup}
 \begin{frame}
 \frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006)}
 \begin{itemize}[label={\MyBall}]
@@ -250,187 +436,5 @@ Banerjee et al. (2020), Bartik et al. (2020), Balduzzi et al. (2020), Dursun-de 
 
 \end{itemize}
 \end{frame}
-
-\begin{frame}
-\frametitle{Government Intervention and New Moral Hazard}
-\begin{itemize}[label={\MyBall}]
-\item An aggregate liquidity shock $\rho>\rho^*$ hits all firms: government with deep pocket intervenes at $t=1$.
-\item The government can only monitor the firm through the investor.
-\vspace{0.5cm}
-\item The firm at $t=1$, if not monitored, chooses between:
-\begin{itemize}[label={\MyBall}]
-\item \textbf{reinvest:} invest government liquidity together with the credit line contracted with the investor;
-\item \textbf{default:} consume the government injection.
-\end{itemize}
-
-
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Government Intervention and New Moral Hazard}
-
-\begin{table}[H]
-\centering
-\caption{Cashflows Upon Federal Liquidity Injection}
-\resizebox{3in}{!}{\begin{tabular}{lcccc}
-\hline
-Decision &  Agent            & $t=0$      & $t=1$     & $t=2$  \\ \hline
-\multirow{2}{*}{reinvest} & Firm & $-A$     &   0    & $p_H\frac{B}{\Delta p}$ \\
-& Bank     & $-(I-A)$ & $-\rho$ * & $p_H\left( R-\frac{B}{\Delta p}\right)$ \\ \hline
-\hline
-%t            & $0$      & $1$     & $2$  \\ \hline
-\multirow{2}{*}{default}& Firm & $-A$     & $+(\rho-\rho ^*)$       & 0 \\
-& Bank     & $-(I-A)$ & 0  & 0 \\ \hline
-\end{tabular}}
-\end{table}
-\begin{itemize}[label={\MyBall}]
-
-\item $ \rho ^* \in [p_H(R-\frac{B}{\Delta p}),  p_HR] \implies$ \textbf{investor does not have incentive to monitor regardless of $\rho$}, he would rather the project go south.
-\vspace{0.5cm}
-\item When $\rho ^*+\frac{p_HB}{\Delta p}\geq \rho>\rho ^*$, the firm reinvests;
-\item When $\rho>\rho^*+\frac{p_HB}{\Delta p}$, the firm defaults, a moral hazard between firm and government emerges.
-
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Fiscal Cost of Intervention}
-\begin{itemize}[label={\MyBall}]
-\item There is no moral hazard between the government and the firm when $\rho$ is small.
-\item Moral hazard emerges when liquidity shock $\rho$ surpasses a point ($\rho^*+\frac{p_HB}{\Delta p}$).
-\item To overcome the problem, the government has to incentivize the investor by paying him $D$ to monitor the firm:
-\begin{align*}
-D=\rho ^*-p_H(R-\frac{B}{\Delta p})    
-\end{align*}
-\vspace{0.5cm}
-\item in case of effective government intervention, such moral hazard \textbf{causes a discontinuous increase} $D$ in the government spending and investor utility at a cutoff.
-
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Fiscal Cost of Intervention}
-\includegraphics[scale=0.6]{utility1}
-\end{frame}
-
-\begin{frame}
-\frametitle{Externality}
-\begin{itemize}[label={\MyBall}]
-\item Bailing out firms is always financially costly to the government, so why would a government intervene?
-\item Each firm provides a positive externality $\frac{\phi}{N} > 0$, where $N$ is the total number of firms in the economy. In case of aggregate shock that threats the whole economy, the government evaluates $\phi$ against $g(\rho)$ 
-\vspace{1cm}
-\item \textbf{Policy Recommendation 1:} \textit{The government decides to inject liquidity in response to a liquidity shock of size $\rho$ whenever $\phi-g(\rho)>0 \iff \rho<g^{-1}(\phi)$ assuming that the government is able to observe the liquidity shock.}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Over-Report Tendency}
-\begin{itemize}[label={\MyBall}]
-\item So far, we have assumed that the government is able to observe the realized liquidity shock $\rho$ at $t=1$.
-\item Yet it is particularly likely that the true liquidity shock $\rho_t$ is private information to the firm and the investor.
-\item This informational asymmetry allows the firm-investor pair to over-report the actual liquidity shock as $\rho_{r} = \rho_{t}+\sigma$ for some $\sigma \geq 0$ so as to jointly realize extra payoff.
-\item The problem is aggravated around the cutoff $\rho_{cf}$. This is because  over-reporting for some $\rho_t$ slightly below $\rho_{cf}$ could lead to a discontinuous increase in fiscal costs.
-
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Over-Report Tendency}
-\includegraphics[scale=0.4]{utility2}
-\begin{itemize}[label={\MyBall}]
-
-\item The moral hazard between the government and the firm only exists in $A_2$ but not in $A_1$;
-\item A bank-firm pair with $\rho_t \in A_1$ has incentives to report a higher shock and pretend to be in $A_2$ in order to exploit $D$
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Over-Report Tendency}
-\begin{itemize}[label={\MyBall}]
-
-\item Knowing the over-report tendency, how can the government improves the situation? 
-\item Denote $\tilde{\rho}$ as the optimal policy cutoff based on which the government decides about the size of the liquidity injection.
-\begin{gather*}
-    g(\rho_r) = \begin{cases} 
-      \rho_r-\rho^* & \text{for}\,\, \rho^* < \rho \leq \tilde{\rho} \\
-      \rho_r-\rho^*+D & \text{for}\,\,\rho > \tilde{\rho}
-   \end{cases}
-\end{gather*}
-\item Our goal: to find $\tilde{\rho}$ that causes the least loss to the government compared to a perfect world without over-report tendency.
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Over-Report Tendency}
-\begin{itemize}[label={\MyBall}]
-
-\item Observing $\rho_r$, the government forms an estimate of $\sigma=\rho_r-\rho_t$, denoted as $\psi$, which is continuously distributed with cdf $H(\psi)$.
-\item If the government grants $\rho_r-\rho^*+D$, the expected loss (compared to perfect world) is $\int h(\psi)\psi \,\,d\psi+\mathbb{P}(\rho_r-\psi \leq \rho_{cf})D$, denoted as \textcolor{red}{\textit{type I loss}}. 
-\item If the government only grants $\rho_r-\rho^*$, the expected loss is $\int h(\psi)\psi \,\,d\psi+\mathbb{P}(\rho_r-\psi > \rho_{cf})(\phi-D)$, denoted as \textcolor{red}{\textit{type II loss}}. 
-\item By definition of $\tilde{\rho}$, it solves when the two types loss equalize.
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Over-Report Tendency}
-\begin{itemize}[label={\MyBall}]
-
-\item Solving the problem:
-\begin{align*}
-         \tilde{\rho}&=\rho_{cf}+H^{-1}\left( \frac{D}{\phi} \right).
-\end{align*}
-\item \textbf{Policy Recommendation 2:} \textit{In case of informational asymmetries between the bank-firm pair and the government with respect to the actual liquidity shock $\rho_t$ the fiscal authority should set $\tilde{\rho}=\rho_{cf}+H^{-1}\left( \frac{D}{\phi} \right)$.}
-\end{itemize}
-\end{frame}
-
-\section{Analysis}
-\subsection{Fiscal Cost of Intervention}
-
-
-
-
-\begin{frame}
-\frametitle{Extension}
-
-\begin{itemize}[label={\MyBall}]
-
-	\item Idea: In the US banks are forced to keep a minimum of 5\% of the credit risk on their balance sheet. 
-
-	\item Show adjusted table on page 10 
-
-	\item In the current version of the model, whether or not the banks are exposed to part of the credit risk doesn't change their monitoring incentives because the IC and PC need to be fulfilled and the payoff structure cannot be altered. 
-
-	\item Question: How can we move to a more accurate description of reality by allowing for repayment of
-
-\end{itemize}
-\end{frame}
-
-\section{Conclusion}
-\begin{frame}
-\frametitle{Conclusion}
-Model of government bailout of firms through financial intermediaries
-	\begin{itemize}[label={\MyBall}]
-		\item Aggregate liquidity shock exceeds firms' credit lines.\\
-		$\implies$ Requires externality-valuing government to make a decision about liquidity injections.
-		\pause
-		\item Federal liquidity injection via financial intermediaries creates a discontinuous increase in fiscal costs due to moral hazard.
-		\pause
-		\item Private information about the size of the liquidity shock  aggravates the moral hazard problem locally.
-		\pause
-		\item Government intervention is costly but not substitutable by the financial intermediaries.
-	\end{itemize}
-
-\end{frame}
-
-\section{Appendix}
-\begin{frame}
-\frametitle{XXX}
-\end{frame}
-
-
-
 
 \end{document}
