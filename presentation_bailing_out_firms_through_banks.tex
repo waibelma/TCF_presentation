@@ -90,18 +90,25 @@
 \begin{document}
 	
 \title{Bailing out Firms Through Banks}
-\author{Chunjie Wang and Martin Waibel (2020)}
+\author{Chunjie Wang and Martin Waibel}
+\institute 
+{
+ Swedish House of Finance
+}
 \date{\today}
 
- \renewcommand*\inserttotalframenumber{10	}
+ \renewcommand*\inserttotalframenumber{10}
 
 \begin{frame}
+\thispagestyle{empty}
 \maketitle
 \end{frame}
 
 \section{Introduction}
 \subsection{Motivation}
 \begin{frame}
+\setcounter{framenumber}{1}
+\setbeamertemplate{footline}[0]
 \frametitle{Motivation}
 
 \begin{itemize}[label={\MyBall}]
@@ -195,7 +202,8 @@ Banerjee et al. (2020), Bartik et al. (2020), Balduzzi et al. (2020), Dursun-de 
 \subsection{Model setup}
 
 \begin{frame}
-\frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006)}
+\frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006) \hyperlink{detailed_setup_Tirole}{\beamerbutton{Model}}}
+\label{Tirole_setup_main}
 \begin{itemize}[label={\MyBall}]
 \item Competitive credit market; effort of entrepreneur is not contractible $\implies$ \textbf{incentive compatibility};  \textbf{participation constraint}
 \item liquidity shock $\rho$ randomly drawn from commonly known cdf $F(\rho)$
@@ -363,7 +371,8 @@ Model of government bailout of firms through financial intermediaries
 
 \subsection{Model setup}
 \begin{frame}
-\frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006)}
+\frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006) \hyperlink{Tirole_setup_main}{\beamerbutton{Back}}}
+\label{detailed_setup_Tirole}
 \begin{itemize}[label={\MyBall}]
 	\item $t\in \{ 0,1,2\}$
 	\item Two agents: firm (endowment $A$) and investor
@@ -383,7 +392,7 @@ Model of government bailout of firms through financial intermediaries
 \end{frame}
 
 \begin{frame}
-\frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006)}
+\frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006) \hyperlink{Tirole_setup_main}{\beamerbutton{Back}}}
 \begin{itemize}[label={\MyBall}]
 \item The financing contract at $t=0$ needs to be incentive compatible: the firm requires $p_H\frac{B}{\Delta p}$ to exert effort.
 \item The contract at $t=0$ also states the maximum liquidity shock $\rho ^*$ at $t=1$ that the investor agrees to finance.
@@ -399,7 +408,7 @@ Model of government bailout of firms through financial intermediaries
 \end{frame}
 
 \begin{frame}
-\frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006)}
+\frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006) \hyperlink{Tirole_setup_main}{\beamerbutton{Back}}}
 \begin{itemize}[label={\MyBall}]
 \item $U_{firm}(\rho ^*)$ peaks at $\rho *=p_HR$ and $\mathcal{P}(\rho ^*)$ peaks at $\rho *=p_H(R-\frac{B}{\Delta p})$.
 \includegraphics[scale=0.4]{Tirole}
@@ -414,7 +423,7 @@ Model of government bailout of firms through financial intermediaries
 
 
 \begin{frame}
-\frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006)}
+\frametitle{Basic Setup: Contracted Liquidity Shock (Tirole, 2006) \hyperlink{Tirole_setup_main}{\beamerbutton{Back}}}
 \begin{itemize}[label={\MyBall}]
 \item $ \rho ^* \in [p_H(R-\frac{B}{\Delta p}),  p_HR]$ implies the firm needs to plan its liquidity management at $t=0$ according to either of the following specifications or any combination of them:
 \vspace{0.5cm}
@@ -467,6 +476,6 @@ Model of government bailout of firms through financial intermediaries
 	\end{table}
 	\begin{textblock*}{3cm}(.5\textwidth,0.1\textheight)%
 		    \hyperlink{further_extension_main}{\beamerbutton{Back}}        
-		\end{textblock*}
+	\end{textblock*}
 \end{frame}
 \end{document}
