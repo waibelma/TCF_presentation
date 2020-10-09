@@ -12,6 +12,7 @@
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{graphicx, wrapfig}
+\usepackage{textpos}
 
 
 \usepackage{tikz}
@@ -315,7 +316,9 @@ Model of government bailout of firms through financial intermediaries
 
 \subsection{Extension}
 \begin{frame}
-\frametitle{Possible Extensions}
+\frametitle{Extensions}
+
+
 \begin{itemize}[label={\MyBall}]
 
 	\item Idea: In the US banks are forced to keep a minimum of 5\% of the credit risk on their balance sheet (Touree (2020))
@@ -323,53 +326,18 @@ Model of government bailout of firms through financial intermediaries
 		\begin{itemize}[label={\MyBall}]
 			\item How can we make the model flexible enough to be able to adapt to allow for banks being incentivised by being exposed to part of the credit risk ? 
 		\end{itemize}
-	\pause	
-	\item 
-
-	\begin{table}[H]
-		\centering
-		\caption{Cashflows Upon Federal Liquidity Injection}
-		\resizebox{3in}{!}{\begin{tabular}{lcccc}
-		\hline
-		Decision &  Agent            & $t=0$      & $t=1$     & $t=2$  \\ \hline
-		\multirow{2}{*}{reinvest} & Firm & $-A$     &   0    & $p_H\frac{B}{\Delta p}$ \\
-		& Bank     & $-(I-A)$ & $-\rho$ * & $p_H\left( R-\frac{B}{\Delta p}\right)$ \\ \hline
-		\hline
-		%t            & $0$      & $1$     & $2$  \\ \hline
-		\multirow{2}{*}{default}& Firm & $-A$     & $+(\rho-\rho ^*)$       & 0 \\
-		& Bank     & $-(I-A)$ & 0  & 0 \\ \hline
-		\end{tabular}}
-	\end{table}
-\end{itemize}
-\end{frame}
-
-\section{Extension}
-\subsection{Theory}
-\begin{frame}
-\frametitle{Possible Extensions}
-\begin{itemize}[label={\MyBall}]
-
-	\item In the US banks are forced to keep a minimum of 5\% of the credit risk on their balance sheet. 
-	\begin{table}[H]
-		\centering
-		\caption{Cashflows Upon Federal Liquidity Injection}
-		\resizebox{3in}{!}{\begin{tabular}{lcccc}
-		\hline
-		Decision &  Agent            & $t=0$      & $t=1$     & $t=2$  \\ \hline
-		\multirow{2}{*}{reinvest} & Firm & $-A$     &   0    & $p_H\frac{B}{\Delta p}$ \\
-		& Bank     & $-(I-A)$ & $-[\rho^* + \textcolor{red}{0.05(\rho - \rho^*)}]$  & $p_H\left( R-\frac{B}{\Delta p}\right)$ \\ \hline
-		\hline
-		%t            & $0$      & $1$     & $2$  \\ \hline
-		\multirow{2}{*}{default}& Firm & $-A$     & $+(\rho-\rho ^*)$       & 0 \\
-		& Bank     & $-(I-A)$ &  $\textcolor{red}{-0.05(\rho - \rho^*)}$  & 0 \\ \hline
-		\end{tabular}}
-	\end{table}
+		\begin{textblock*}{3cm}(.5\textwidth,0.1\textheight)%
+		    \hyperlink{table_extension}{\beamerbutton{Table}}        
+		\end{textblock*}
 \end{itemize}
 \end{frame}
 
 
+
+
 \begin{frame}
-\frametitle{Possible Extensions}
+\frametitle{Extensions}
+\label{further_extension_main}
 \begin{itemize}[label={\MyBall}]
 	\item In the current version of the model, whether or not the banks are exposed to part of the credit risk doesn't change their monitoring incentives because the IC and PC need to be fulfilled and the payoff structure cannot be altered. 
 
@@ -377,9 +345,8 @@ Model of government bailout of firms through financial intermediaries
 \end{itemize}
 \end{frame}
 
-\subsection{Empirics}
 \begin{frame}
-\frametitle{Possible Extensions}
+\frametitle{Extensions}
 \begin{itemize}[label={\MyBall}]
 	\item European Investment Bank guaranteed credits for Commerzbank loans to small corporations that ran into problems of repayment. 
 \end{itemize}
@@ -457,8 +424,49 @@ Model of government bailout of firms through financial intermediaries
 \end{itemize}
 \vspace{0.5cm}
 \item It turns out which specification the firm decides to follow does not matter in our model, thus throughout the paper, we assume the first case. 
-
-
 \end{itemize}
+\end{frame}
+
+\subsection{Extensions}
+\begin{frame}
+\label{table_extension}
+\frametitle{Extensions}
+\begin{table}[H]
+		\centering
+		\caption{Cashflows Upon Federal Liquidity Injection}
+		\resizebox{3in}{!}{\begin{tabular}{lcccc}
+		\hline
+		Decision &  Agent            & $t=0$      & $t=1$     & $t=2$  \\ \hline
+		\multirow{2}{*}{reinvest} & Firm & $-A$     &   0    & $p_H\frac{B}{\Delta p}$ \\
+		& Bank     & $-(I-A)$ & $-\rho$ * & $p_H\left( R-\frac{B}{\Delta p}\right)$ \\ \hline
+		\hline
+		%t            & $0$      & $1$     & $2$  \\ \hline
+		\multirow{2}{*}{default}& Firm & $-A$     & $+(\rho-\rho ^*)$       & 0 \\
+		& Bank     & $-(I-A)$ & 0  & 0 \\ \hline
+		\end{tabular}}
+	\end{table}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Extensions}
+\begin{table}[H]
+		\centering
+		\caption{Cashflows Upon Federal Liquidity Injection}
+		\resizebox{3in}{!}{\begin{tabular}{lcccc}
+		\hline
+		Decision &  Agent            & $t=0$      & $t=1$     & $t=2$  \\ \hline
+		\multirow{2}{*}{reinvest} & Firm & $-A$     &   0    & $p_H\frac{B}{\Delta p}$ \\
+		& Bank     & $-(I-A)$ & $-[\rho^* + \textcolor{red}{0.05(\rho - \rho^*)}]$  & $p_H\left( R-\frac{B}{\Delta p}\right)$ \\ \hline
+		\hline
+		%t            & $0$      & $1$     & $2$  \\ \hline
+		\multirow{2}{*}{default}& Firm & $-A$     & $+(\rho-\rho ^*)$       & 0 \\
+		& Bank     & $-(I-A)$ &  $\textcolor{red}{-0.05(\rho - \rho^*)}$  & 0 \\ \hline
+		\end{tabular}}
+	\end{table}
+	\begin{textblock*}{3cm}(.5\textwidth,0.1\textheight)%
+		    \hyperlink{further_extension_main}{\beamerbutton{Back}}        
+		\end{textblock*}
 \end{frame}
 \end{document}
